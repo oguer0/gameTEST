@@ -1,0 +1,102 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5nxi8i13vway"]
+
+[ext_resource type="Script" path="res://Control.gd" id="1_lrgol"]
+[ext_resource type="FontFile" uid="uid://c10f45c7usqp7" path="res://WindyCity.ttf" id="2_q3qq1"]
+[ext_resource type="Texture2D" uid="uid://dg3wghceco76n" path="res://8685985.jpg" id="3_gxlfv"]
+
+[node name="OptionMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lrgol")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -44.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_q3qq1")
+text = "Back"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gxlfv")
+expand_mode = 1
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = -8.0
+offset_right = 40.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Instr" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_q3qq1")
+text = "Instructions:
+"
+horizontal_alignment = 1
+
+[node name="Control" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_q3qq1")
+text = "Move Left: Arrow Key Left / A
+Move Right: Arrow Key Right / D
+Move Up: Arrow Key Up / W
+Move Down: Arrow Key Down / S
+Confirm Action: Enter Key/ R-Click"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 15.0
+offset_right = 50.0
+offset_bottom = 31.0
+grow_horizontal = 2
+
+[node name="OptionTitlee" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_q3qq1")
+text = "Options Menu"
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_button_pressed"]
