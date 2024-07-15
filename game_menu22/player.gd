@@ -32,13 +32,14 @@ func _process(delta):
 	
 	if velocity.x == 0 && velocity.y == 0:
 		$AnimatedSprite2D.animation = "idle"
+		$AnimatedSprite2D.flip_h = true
 	if velocity.x != 0:
 		$AnimatedSprite2D.animation = "move"
 		$AnimatedSprite2D.flip_v = false
 	# See the note below about boolean assignment.
 		$AnimatedSprite2D.flip_h = velocity.x < 0
-	#elif velocity.y != 0:
-		#$AnimatedSprite2D.animation = "up"
+	elif velocity.y != 0:
+		$AnimatedSprite2D.animation = "move"
 		#$AnimatedSprite2D.flip_v = velocity.y > 0
 func start(pos):
 	position = pos
